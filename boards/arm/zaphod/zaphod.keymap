@@ -16,8 +16,20 @@
 #define SYM 3
 #define FUN 4
 
-#define BACK LG(LS(LBKT))
-#define FOWD LG(LS(RBKT))
+#define NEXT LG(LS(LBKT))
+#define PREV LG(LS(RBKT))
+
+#define FIND LG(F)
+
+#define UNDO  LG(Z)
+#define CUT   LG(X)
+#define COPY  LG(C)
+#define PASTE LG(V)
+
+#define ZOOM_IN  LG(PLUS)
+#define ZOOM_OUT LG(MINUS)
+#define ZOOM_0   LG(N0)
+
 
 / {
     behaviors {
@@ -92,46 +104,46 @@
 
         default_layer {
             bindings = <
-   &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L  &kp U     &kp Y   &kp SQT
-   &kp A &kp R &kp S &kp T &kp G    &kp M &kp N  &kp E     &kp I   &kp O
-   &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
-               &mo EXT &kp LSHFT    &kp SPACE &mo SYM
+&kp Q        &kp W        &kp F        &kp P        &kp B        &kp J        &kp L        &kp U        &kp Y        &kp SQT
+&kp A        &kp R        &kp S        &kp T        &kp G        &kp M        &kp N        &kp E        &kp I        &kp O
+&kp Z        &kp X        &kp C        &kp D        &kp V        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
+                                       &mo EXT      &kp LSHFT    &kp SPACE    &mo SYM
             >;
         };
 
         russian_layer {
             bindings = <
-   &kp Z &kp SEMI &kp A &kp G &kp COMMA     &kp Q &kp K &kp E  &kp S  &kp SQT
-   &kp F &kp H    &kp C &kp N &kp U         &kp V &kp Y &ru_ee &kp B  &kp J
-   &kp P &kp LBKT &kp W &kp L &kp D         &kp R &kp X &ru_bb &ru_sh &kp DOT
-                        &trans &trans       &trans &trans
+&kp Z        &kp SEMI     &kp A         &kp G        &kp COMMA    &kp Q        &kp K        &kp E        &kp S        &kp SQT
+&kp F        &kp H        &kp C         &kp N        &kp U        &kp V        &kp Y        &ru_ee       &kp B        &kp J
+&kp P        &kp LBKT     &kp W         &kp L        &kp D        &kp R        &kp X        &ru_bb       &ru_sh       &kp DOT
+                                        &trans       &trans       &trans       &trans
             >;
         };
 
         ext_layer {
             bindings = <
-   &gresc    &kp BACK &kp LG(F) &kp FOWD &kp LG(B)       &kp PG_UP    &kp HOME &kp UP   &kp END   &td_caps
-   &sk LALT  &sk LGUI         &sk LSHFT &sk LCTRL        &lang_switch    &kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
-   &kp LG(Z) &kp LG(X)        &kp LG(C) &kp TAB          &kp LG(V)       &kp LA(BSPC) &kp BSPC &none    &none     &none
-                                      &trans           &trans          &kp RET      &trans
+&gresc       &kp PREV     &kp FIND      &kp NEXT     &kp LG(B)    &kp PG_UP    &kp HOME     &kp UP       &kp END      &td_caps
+&sk LALT     &sk LGUI     &sk LSHFT     &sk LCTRL    &kp LC(G)    &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+&kp UNDO     &kp CUT      &kp COPY      &kp TAB      &kp PASTE    &kp LA(BSPC) &kp BSPC     &none        &none        &none
+                                        &trans       &trans       &kp RET      &trans
             >;
         };
 
         sym_layer {
             bindings = <
-   &kp N1  &kp N2    &kp N3   &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9   &kp N0
-   &kp LT  &kp PRCNT &kp LBRC &kp LPAR  &kp LBKT     &kp EQUAL &kp UNDER &kp COLON &kp PIPE &kp GRAVE
-   &kp GT  &kp AMPS  &kp RBRC &kp RPAR  &kp RBKT     &kp PLUS  &kp MINUS &kp SEMI  &kp BSLH &kp TILDE
-                                    &trans &trans   &trans &trans
+&kp N1       &kp N2       &kp N3        &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
+&kp LT       &kp PRCNT    &kp LBRC      &kp LPAR     &kp LBKT     &kp EQUAL    &kp UNDER    &kp COLON    &kp PIPE     &kp GRAVE
+&kp GT       &kp AMPS     &kp RBRC      &kp RPAR     &kp RBKT     &kp PLUS     &kp MINUS    &kp SEMI     &kp BSLH     &kp TILDE
+                                        &trans       &trans       &trans       &trans
             >;
         };
 
         fun_layer {
             bindings = <
-   &none &kp C_PREV   &kp C_PP   &kp C_NEXT   &kp C_BRI_UP    &none &none &none &none &none
-   &none &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &kp C_BRI_DN    &none &none &none &none &none
-   &none &none        &none      &none        &none           &none &none &none &none &none
-                     &none &none    &none &none
+&none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp C_BRI_UP &kp ZOOM_IN  &none        &none        &none        &none
+&none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp C_BRI_DN &kp ZOOM_OUT &none        &none        &none        &none
+                                        &none        &none        &kp ZOOM_0   &none
+&switch_lang &none        &none         &none        &none        &none        &none        &none        &none        &none
             >;
         };
     };
