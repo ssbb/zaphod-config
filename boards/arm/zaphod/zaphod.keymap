@@ -16,8 +16,8 @@
 #define SYM 3
 #define FUN 4
 
-#define NEXT LG(LS(LBKT))
-#define PREV LG(LS(RBKT))
+#define PREV LG(LS(LBKT))
+#define NEXT LG(LS(RBKT))
 
 #define FIND LG(F)
 
