@@ -131,12 +131,21 @@
 
         sym_layer {
             bindings = <
-&kp N1       &kp N2       &kp N3        &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
-&kp LT       &kp PRCNT    &kp LBRC      &kp LPAR     &kp LBKT     &kp EQUAL    &kp UNDER    &kp COLON    &kp PIPE     &kp GRAVE
-&kp GT       &kp AMPS     &kp RBRC      &kp RPAR     &kp RBKT     &kp PLUS     &kp MINUS    &kp SEMI     &kp BSLH     &kp TILDE
+&kp EXCL     &kp AT       &kp HASH      &kp COLON    &kp SEMI     &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp PLUS
+&kp PIPE     &kp PRCNT    &kp LBRC      &kp LPAR     &kp LBKT     &kp N0       &kp N1       &kp N2       &kp N3       &kp MINUS
+&kp BSLH     &kp UNDS     &kp RBRC      &kp RPAR     &kp RBKT     &kp STAR     &kp N7       &kp N8       &kp N9       &kp FSLH
                                         &trans       &trans       &trans       &trans
             >;
         };
+
+//         sym_layer {
+//             bindings = <
+// &kp N1       &kp N2       &kp N3        &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
+// &kp LT       &kp PRCNT    &kp LBRC      &kp LPAR     &kp LBKT     &kp EQUAL    &kp UNDER    &kp COLON    &kp PIPE     &kp GRAVE
+// &kp GT       &kp AMPS     &kp RBRC      &kp RPAR     &kp RBKT     &kp PLUS     &kp MINUS    &kp SEMI     &kp BSLH     &kp TILDE
+//                                         &trans       &trans       &trans       &trans
+//             >;
+//         };
 
         fun_layer {
             bindings = <
